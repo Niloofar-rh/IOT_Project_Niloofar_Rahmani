@@ -42,6 +42,9 @@ class Device:
         elif self.device_type=='doors':
             GPIO.setup(27,GPIO.OUT)
             
+        elif self.device_type=='camera':
+            GPIO.setup(38,GPIO.OUT)
+            
 
     def turn_on(self):
         print('Done!!!')
