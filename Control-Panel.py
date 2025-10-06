@@ -101,7 +101,7 @@ class control_panel:
             
         else:
             
-            print('....')
+            print(f'{group_name} is not exist in groups')
             
             
             
@@ -122,18 +122,18 @@ class control_panel:
                 device.turn_on()
             
         else:
-            print('....') 
+            print(f'{group_name} is not exist in groups') 
             
             
             
     def turn_off_in_group(self,group_name):
-        '''
-        biad dakhele oon group_name doone doone ro
-        khamoosh kone 
-        
-        
-        '''
-        pass
+       if group_name in self.groups:
+            devices=self.get_devices(group_name)
+            
+            for device in devices:
+                device.turn_off()
+         else:
+             print (f'{group_name} is not exist groups')
     
     
     def turn_on_all(self):
