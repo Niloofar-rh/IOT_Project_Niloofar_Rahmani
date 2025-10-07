@@ -1,5 +1,8 @@
 '''
-
+ سلام و خسته نباشید
+- Aya lazeme baraye if ha dar method (trun_on_in_group) va (trun_ooff_in_group) ham print benevisam?
+- method get_status_in_group ro dorost nevashtam? age iradi dare dar method get_status_in_device_type eshtebah ro tekrar nakonam.
+- dar def create_sensor(self): , bedoone voroodi mishe sensor sakht? mishe in ro ham rahnamayi konid?
 
 
 '''
@@ -107,7 +110,7 @@ class control_panel:
             
         else:
             
-            print(f'{group_name} is not exist in groups')
+            print(f'{group_name} does not exist in groups')
             
             
             
@@ -128,7 +131,7 @@ class control_panel:
                 device.turn_on()
             
         else:
-            print(f'{group_name} is not exist in groups') 
+            print(f'{group_name} does not exist in groups') 
             
             
             
@@ -139,39 +142,37 @@ class control_panel:
             for device in devices:
                 device.turn_off()
          else:
-             print (f'{group_name} is not exist groups')
+             print (f'{group_name} does not exist in groups')
     
     
     def turn_on_all(self):
-        '''
-        tamame device haro roshan kone
-        too livign toome parking hgarjaa
-        hamaroo roshan kone
-        '''
-        pass
-    
+       for devices in self.groups.values():
+           for device in devices:
+                  device.turn_on()
+    print('All devices have been turned on')
     
     def turn_off_all(self):
-        '''
-        hamaro khamoosh kone
-        '''
-        
-        
-        pass
+    for devices in self.groups.values():
+           for device in devices:
+                  device.turn_off()
+    print('All devices have been turned off')
     
     
     def get_status_in_group(self,group_name):
-        '''
-        be ezaye device haye tooye masalan felan group
-        living_room --> bebine roshanan ya khamoshan
-        porint kone
-        
-        a.get_status_in_group('living_room')
-        
-        device {name} is on
-        ... ..  .. ois off
-        .. .. .. is on
-        '''
+      if group_name in self.groups:
+             devices=self.get_devices(group_name)
+             for device in devices:
+                    status=device.get_status()
+                    if status==True:
+                           print(f'{device.device_name} is on)
+                    else:
+                    print(f'{device.device_name} is off)
+       else: 
+            print (f'{group_name} does not exist in groups')
+       
+       
+                      
+                    
         
     def get_status_in_device_type(self,dvice_type):
         
