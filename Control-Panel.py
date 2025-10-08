@@ -5,6 +5,15 @@
 - dar def create_sensor(self): , bedoone voroodi mishe sensor sakht? mishe in ro ham rahnamayi konid?
 
 
+APM:
+
+salam arz shod , 
+-bale baraye har etefagh ma bayad yek print dashte bashim
+-bale doros hast fgth dota error dashtim yeki syntaxi ( choon yadeton rafte bood qutation ' tahe print bzarid va ident ro rayat nakarde bodid
+yani ye tab (4 space) fasele paeene if va else --> man baraton eslah krdm
+- create_sensor(self,group_name,sensor_type,sensor_name):
+
+
 '''
 
 #===================================
@@ -164,9 +173,9 @@ class control_panel:
              for device in devices:
                     status=device.get_status()
                     if status==True:
-                           print(f'{device.device_name} is on)
+                        print(f'{device.device_name} is on')
                     else:
-                    print(f'{device.device_name} is off)
+                        print(f'{device.device_name} is off')
        else: 
             print (f'{group_name} does not exist in groups')
        
