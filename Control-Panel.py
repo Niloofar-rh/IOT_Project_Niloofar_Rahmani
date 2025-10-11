@@ -17,6 +17,11 @@ NR:
 salam mojadad
 mishe lotfan get_status_in_device_type ro check konid? man soal ro dorost motevaje shodam?
 
+
+
+APM:
+
+salam bale dorost hast fght bejaye device_type tooye print device_name bayad bashe k baraton eslah krdm
 '''
 
 #===================================
@@ -161,13 +166,13 @@ class control_panel:
        for devices in self.groups.values():
            for device in devices:
                   device.turn_on()
-    print('All devices have been turned on')
+        print('All devices have been turned on')
     
     def turn_off_all(self):
-    for devices in self.groups.values():
-           for device in devices:
-                  device.turn_off()
-    print('All devices have been turned off')
+        for devices in self.groups.values():
+               for device in devices:
+                      device.turn_off()
+        print('All devices have been turned off')
     
     
     def get_status_in_group(self,group_name):
@@ -196,9 +201,9 @@ class control_panel:
   
                    status=device.get_status()
                    if status==True:
-                        print(f'{device.device_type} is on')
+                        print(f'{device.device_name} is on')
                    else:
-                        print(f'{device.device_type} is off')
+                        print(f'{device.device_name} is off')
                else:
                     print(f'{device_type} does not exist in devices')
     
