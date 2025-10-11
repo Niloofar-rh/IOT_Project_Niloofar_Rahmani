@@ -15,8 +15,7 @@ yani ye tab (4 space) fasele paeene if va else --> man baraton eslah krdm
 
 NR:
 salam mojadad
-mishe lotfan get_status_in_device_type ro check konid? kheili roosh fekr kardam vali baz motmaen nistam ke dorost kar kone.
-
+mishe lotfan get_status_in_device_type ro check konid? man soal ro dorost motevaje shodam?
 
 '''
 
