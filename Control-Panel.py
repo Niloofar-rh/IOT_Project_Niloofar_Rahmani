@@ -13,6 +13,9 @@ salam arz shod ,
 yani ye tab (4 space) fasele paeene if va else --> man baraton eslah krdm
 - create_sensor(self,group_name,sensor_type,sensor_name):
 
+NR:
+salam mojadad
+mishe lotfan get_status_in_device_type ro check konid? kheili roosh fekr kardam vali baz motmaen nistam ke dorost kar kone.
 
 
 '''
@@ -184,29 +187,34 @@ class control_panel:
                       
                     
         
-    def get_status_in_device_type(self,dvice_type):
-        
-        '''
-        varaye kole devicd haee k hasan
-        bere device_typeshono check kone
-        
-        fght lamparo bere check kone
-        
-        lamps -->lampa
-        doors --L> fght doora
-        (too ch groupi , device_type)
-        
-        statuseshono bede
-
-        
-        '''
-        pass
+    def get_status_in_device_type(self,device_type):
+      
+       for devices in self.groups.values():
+ 
+           for device in devices:
+  
+               if device.device_type==device_type:
+  
+                   status=device.get_status()
+                   if status==True:
+                        print(f'{device.device_type} is on')
+                   else:
+                        print(f'{device.device_type} is off')
+               else:
+                    print(f'{device_type} does not exist in devices')
     
     
-    #tabe ee bename create_device???
-    
-    def create_sensor(self):
-        pass
+    def create_sensor(self,group_name,sensor_type,sensor_name):
+      if group_name in self.groups:
+            location='home'
+            new_sensor=Sensor(location,group_name,sensor_type,sensor_name)
+            
+            self.groups[group_name].append(new_sensor)
+            print(f'{sensor_name} added to {group_name}')
+            
+      else:
+            print(f'{group_name} does not exist.')
+        
     
     def create_multiple_sensor(self):
         pass
