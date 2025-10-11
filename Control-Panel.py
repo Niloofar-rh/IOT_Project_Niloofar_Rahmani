@@ -217,5 +217,10 @@ class control_panel:
     
     def create_multiple_sensor(self):
         pass
+     
+c=control_panel()
+c.create_group('livingroom')
+c.create_device('livingroom', 'lamp', 'lamp1')
+c.get_status_in_device_type('lamp')
     
     
