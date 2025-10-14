@@ -20,7 +20,6 @@ mishe lotfan get_status_in_device_type ro check konid? man soal ro dorost moteva
 
 
 APM:
-
 salam bale dorost hast fght bejaye device_type tooye print device_name bayad bashe k baraton eslah krdm
 '''
 
