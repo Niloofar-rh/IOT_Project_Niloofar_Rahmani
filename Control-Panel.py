@@ -21,6 +21,12 @@ mishe lotfan get_status_in_device_type ro check konid? man soal ro dorost moteva
 
 APM:
 salam bale dorost hast fght bejaye device_type tooye print device_name bayad bashe k baraton eslah krdm
+
+
+NR:
+salam
+mamnoon az vaghti ke migzarid va pasokh midid.
+fekr mikonam code haye man takmil shodan. iradi age hast lotfan befarmayid.
 '''
 
 #===================================
@@ -95,7 +101,7 @@ class control_panel:
             # groups['living_room'] -->[]
             print(f'your devic is added to {group_name}')
         else:
-            print('you group is not exist....')
+            print(f'The {group_name} does not exist')
         
         
         
@@ -107,10 +113,10 @@ class control_panel:
             new_device=Device(location,group_name,device_type,device_name)
             
             self.groups[group_name].append(new_device)
-            print('///////bamofghtia')
+            print(f'The {new_device} has been created successfully.')
             
         else:
-            print('agha in esm vojod ndre') #...
+            print(f'The {group_name} does not exist in groups.') 
         
         
         
@@ -126,7 +132,7 @@ class control_panel:
             
         else:
             
-            print(f'{group_name} does not exist in groups')
+            print(f'The {group_name} does not exist in groups')
             
             
             
@@ -137,7 +143,7 @@ class control_panel:
         
         
         
-    def trun_on_in_group(self,group_name):
+    def turn_on_in_group(self,group_name):
         
         if group_name in self.groups:
             
@@ -145,27 +151,28 @@ class control_panel:
             
             for device in devices:
                 device.turn_on()
-            
+            print (f'all devices in the {group_name} have been turned on.')
         else:
-            print(f'{group_name} does not exist in groups') 
+            print(f'The {group_name} does not exist in groups.') 
             
             
             
     def turn_off_in_group(self,group_name):
-       if group_name in self.groups:
+        if group_name in self.groups:
             devices=self.get_devices(group_name)
             
-            for device in devices:
+              for device in devices:
                 device.turn_off()
-         else:
-             print (f'{group_name} does not exist in groups')
+              print (f 'all devices in the {group_name} have been turned off.')
+        else:
+              print (f'The {group_name} does not exist in groups.')
     
     
     def turn_on_all(self):
        for devices in self.groups.values():
            for device in devices:
                   device.turn_on()
-        print('All devices have been turned on')
+           print('All devices have been turned on')
     
     def turn_off_all(self):
         for devices in self.groups.values():
@@ -180,11 +187,11 @@ class control_panel:
              for device in devices:
                     status=device.get_status()
                     if status==True:
-                        print(f'{device.device_name} is on')
+                        print(f'The {device.device_name} is on')
                     else:
-                        print(f'{device.device_name} is off')
-       else: 
-            print (f'{group_name} does not exist in groups')
+                        print(f'The {device.device_name} is off')
+      else: 
+           print (f'The {group_name} does not exist in groups')
        
        
                       
@@ -200,11 +207,11 @@ class control_panel:
   
                    status=device.get_status()
                    if status==True:
-                        print(f'{device.device_name} is on')
+                        print(f'The {device.device_name} is on.')
                    else:
-                        print(f'{device.device_name} is off')
+                        print(f'The {device.device_name} is off.')
                else:
-                    print(f'{device_type} does not exist in devices')
+                    print(f'The {device_type} does not exist in devices.')
     
     
     def create_sensor(self,group_name,sensor_type,sensor_name):
@@ -213,18 +220,25 @@ class control_panel:
             new_sensor=Sensor(location,group_name,sensor_type,sensor_name)
             
             self.groups[group_name].append(new_sensor)
-            print(f'{sensor_name} added to {group_name}')
+            print(f'{sensor_name} added to the {group_name}')
             
       else:
-            print(f'{group_name} does not exist.')
+            print(f'The {group_name} does not exist.')
         
     
-    def create_multiple_sensor(self):
-        pass
+    def create_multiple_sensor(self,group_name,sensor_type,sensor_number):
+        if group_name in self.groups:
+            
+           for i in range(1,sensor_number+1):
+              sensor_name=f'{sensor_type}_{i}'
+              self.create_sensor(group_name,sensor_type,sensor_name)
+
+           print(f'{sensor_number} sensors have been created.')
+            
+        else:
+            
+            print(f'The {group_name} does not exist in groups')
      
-c=control_panel()
-c.create_group('livingroom')
-c.create_device('livingroom', 'lamp', 'lamp1')
-c.get_status_in_device_type('lamp')
+
     
     
