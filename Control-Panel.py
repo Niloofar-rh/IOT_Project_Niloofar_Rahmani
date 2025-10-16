@@ -34,6 +34,12 @@ salam arz shod besiar awli, kamelan doros hast tamame code
 Mitonid dar file README.md yek matne ziba ba tozihate kamele porozhe ezafe konid
 baraye ayande (be onvane resume)
 moafagh bashid
+
+
+NR:
+Salam
+tebghe searchi ke kardam file readme mitune az bakhsh hayi ke neveshtam tashkil beshe. Doroste?
+takmile in bakhsh kami vaghtgir be nazar miad. Say mikonam ke ta shanbe tamoomesh konam vali age forsat nashod mishe baad az deadline takmil shodasho barrasi konid?
 '''
 
 #===================================
